@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    background-color: #2039c6;
+    color: white;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.choice-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.choice-box {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    width: 45%;
+    background-color: #fff;
+}
+
+.text {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.choices {
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2196F3;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1976D2;
+}
+
+.score-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    font-size: 1.5em;
+}
+
+.score-container div {
+    margin: 0 10px;
+}
+
+.winnercall {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #2fd384;
+}
