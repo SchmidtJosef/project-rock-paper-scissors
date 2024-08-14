@@ -9,17 +9,17 @@
 <body>
     <h1>Rock-Paper-Scissors Game!</h1>
     <div class="choice-container">
-        <div class="choice-box" id="user-choice">
+        <div class="choice-box">
             <div class="text">Take your pick</div>
-            <div class="choices">
+            <div class="choices"  id="user-choice">
                 <button id="rock">Rock</button>
                 <button id="paper">Paper</button>
                 <button id="scissors">Scissors</button>
             </div>
         </div>
-        <div class="choice-box" id="computer-choice">
+        <div class="choice-box">
             <div class="text">Computer's pick</div>
-            <div class="choices"><button>???</button></div>
+            <div class="choices"  id="computer-choice"><button id="computerButton">???</button></div>
         </div>
     </div>
     <div class="score-container">
@@ -27,7 +27,8 @@
         <div>VS</div>
         <div>COMPUTER</div>
     </div>
-    <div class="winnercall">PLAY!</div>
+    <div class="running-score"></div>
+    <div class="winnercall">Let's PLAY!</div>
     <script src="script.js"></script>
 </body>
 </html>

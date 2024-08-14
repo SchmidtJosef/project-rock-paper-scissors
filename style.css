@@ -65,8 +65,14 @@ button:hover {
     margin: 0 10px;
 }
 
+.running-score{
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
 .winnercall {
-    font-size: 2em;
+    font-size: 1.2em;
     font-weight: bold;
     margin: 20px 0;
     color: #2fd384;
