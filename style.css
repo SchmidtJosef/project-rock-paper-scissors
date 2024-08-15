@@ -17,8 +17,14 @@ h1 {
 .choice-container {
     display: flex;
     justify-content: space-around;
+    gap: 5px;
     margin: 20px auto;
     max-width: 600px;
+}
+
+.image-box { 
+    width: 150px;
+    height: 150px;
 }
 
 .choice-box {
@@ -37,6 +43,7 @@ h1 {
 .choices {
     display: flex;
     justify-content: space-around;
+    gap: 5px;
 }
 
 button {
