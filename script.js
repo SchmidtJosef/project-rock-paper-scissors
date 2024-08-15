@@ -4,8 +4,8 @@ const scissorsButton = document.querySelector('#scissors');
 const computerButton = document.querySelector('#computerButton');
 const runningScore = document.querySelector('.running-score');
 const winnerBox = document.querySelector('.winnercall');
-const humanImageBox = document.querySelector('.image-box .human');
-const computerImageBox = document.querySelector('.image-box .computer');
+const humanImage = document.querySelector('.image-box.human img');
+const computerImageBox = document.querySelector('.image-box.computer');
 let choices = document.querySelector("#user-choice");
 
 
@@ -47,9 +47,7 @@ function resetScore() {
     humanScore = computerScore = 0;
 }
 
-function displayChoiceImage(choice,box=humanImageBox) {
-    let img = document.createElement('img');    
-    
+function displayChoiceImage(choice,img=humanImage) {  
     if(choice==='rock') {
         img.src = './images/rock.jpeg';
         img.alt = 'ROCK image';
@@ -60,8 +58,6 @@ function displayChoiceImage(choice,box=humanImageBox) {
         img.src = './images/scissors.jpeg';
         img.alt = 'SCISSORS image';
     } else alert('Something went wrong!')
-
-    box.appendChild(img);
 }
 
 function playRound(humanChoice) {
