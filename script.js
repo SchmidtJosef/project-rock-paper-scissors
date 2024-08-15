@@ -5,36 +5,27 @@ const computerButton = document.querySelector('#computerButton');
 const runningScore = document.querySelector('.running-score');
 const winnerBox = document.querySelector('.winnercall');
 const humanImage = document.querySelector('.image-box.human img');
-const computerImageBox = document.querySelector('.image-box.computer');
-let choices = document.querySelector("#user-choice");
-
-
+const computerImage = document.querySelector('.image-box.computer img');
+const choices = document.querySelector("#user-choice");
 
 function getComputerChoice() {
     let choice = Math.floor(Math.random()*3);
     if (choice === 0) {
         computerButton.textContent = 'ROCK';
+        displayChoiceImage('rock',computerImage);
         return 'rock';
     } else if (choice === 1) {
         computerButton.textContent = 'PAPER';
+        displayChoiceImage('paper',computerImage);
         return 'paper';
     } else if (choice === 2) {
         computerButton.textContent = 'SCISSORS';
+        displayChoiceImage('scissors',computerImage);
         return 'scissors';
     } else {
         return 'something went wrong';
     }
 }
-
-// function getHumanChoice() {
-//     let choice = prompt('Type your choice!').toLowerCase();
-//     if (choice == 'rock'||choice=='paper'||choice=='scissors') {
-//         return choice;
-//     } else {
-//         alert('Wrong input!');
-//         getHumanChoice();
-//     }
-// }
 
 let humanScore = 0;
 let computerScore = 0;
@@ -63,6 +54,7 @@ function displayChoiceImage(choice,img=humanImage) {
 function playRound(humanChoice) {
     let computerChoice = getComputerChoice();
     if (humanChoice === computerChoice) {
+        displayScore();
         winnerBox.textContent = `Tie! Both have choosen ${humanChoice}`;
     } else if(humanChoice==='rock'&&computerChoice==='paper'||humanChoice==='paper'&&computerChoice==='scissors'||humanChoice==='scissors'&&computerChoice==='rock') {
         computerScore++;
@@ -80,36 +72,9 @@ function playRound(humanChoice) {
         } else winnerBox.textContent = `${humanChoice} beats ${computerChoice}`;
     }
 }
-  
-function playGame() {
-    let n = 0;
-    for(n=1;n<=5;n++) {
-        playRound();
-        n = humanScore+computerScore;
-    }
-    (humanScore>computerScore) ? console.log('You win the game!') : console.log('The computer win the game!')
-}
-
-// rockButton.addEventListener('click', playRound('rock'));
-// paperButton.addEventListener('click', playRound('paper'));
-// scissorsButton.addEventListener('click', playRound('scissors'));
 
 choices.addEventListener('click', function(e) {
     let target = e.target;
-
     displayChoiceImage(target.id);
-
     playRound(target.id);
-
-    // switch(target.id) {
-    //     case 'rock':
-    //         playRound('rock');
-    //         break;
-    //     case 'paper':
-    //         playRound('paper');
-    //         break;
-    //     case 'scissors':
-    //         playRound('scissors');
-    //         break;
-    // }
 });
